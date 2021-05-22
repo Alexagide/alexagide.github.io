@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="js/coromon.js"></script>
+<title>Swurmy Wiki - Corodex</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="index.html" class="logo" title="Homepage">Swurmy Wiki <img src="ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="index.html">Homepage</a>
+    <a class="active" href="corodex.html">Corodex</a>
+    <a href="adventure.html">Adventure</a>
+    <a href="types.html">Types</a>
+    <a href="traits.html">Traits</a>
+    <a href="skills.html">Skills</a>
+    <a href="items.html">Items</a>
+  </div>
+</div>
+
+<div style="padding-left:300px;padding-top:100px">
+  <h1>All Coromon are listed here:</h1>
+</div>
+<table>
+    <tr>
+      <th style="width: 8%;"># in Corodex</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th style="width: 8%;">Traits</th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th>HP</th>
+      <th>Speed</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Att</th>
+      <th>Sp. Def</th>
+    </tr>
+  </thead>
+  <tbody id="coroData">
+  </tbody>
+  </table>
+  <br> 
+  <p style="padding-left:200px;">You are at the end my boy!</p>
+
+</div>
+</body>
+
+<script>
+var corodex = [
+    {
+    'image': '#1<img src= "ressources/cubzero.webp" width="50" height="50">',
+    'name':'<a href="coromon/cubzero.html">Cubzero</a>',
+    'type':'<a href="../types/ice.html"><img src="ressources/Ice.webp" width="50" height="50"></a>',
+    't1':'Sharp Claws',
+    't2':'Clumsy Power',
+    't3':'',
+    't4':'',
+    'hp':'57',
+    'speed':'27',
+    'atk':'37',
+    'def':'32',
+    'spatk':'30',
+    'spdef':'35',
+    },
+    {
+'image': '#2<img src= "ressources/aroara.webp" width="50" height="50"> ',
+'name':'<a href="coromon/aroara.html">Aroara</a>',
+'type':'<a href="../types/ice.html"><img src="ressources/Ice.webp" width="50" height="50"></a>',
+'t1':'Sharp Claws',
+'t2':'Clumsy Power',
+'t3':'',
+'t4':'',
+'hp':'65',
+'speed':'35',
+'atk':'47',
+'def':'40',
+'spatk':'37',
+'spdef':'42',
+},
+{
+'image': '#4<img src= "ressources/toruga.webp" width="50" height="50">',
+'name':'Toruga',
+'type':'<a href="../types/fire.html"><img src="ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Vegetarian',
+'t2':'Thick Skin',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'37',
+'atk':'30',
+'def':'27',
+'spatk':'35',
+'spdef':'30',
+},
+{
+'image': '#5<img src= "ressources/embaval.webp" width="50" height="50">',
+'name':'Embaval',
+'type':'<a href="../types/fire.html"><img src="ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Vegetarian',
+'t2':'Thick Skin',
+'t3':'',
+'t4':'',
+'hp':'65',
+'speed':'45',
+'atk':'35',
+'def':'35',
+'spatk':'45',
+'spdef':'37',
+},
+{
+'image': '#7<img src= "ressources/nibblegar.webp" width="50" height="50">',
+'name':'Nibblegar',
+'type':'<a href="../types/water.html"><img src="ressources/Water.webp" width="50" height="50"></a>',
+'t1':'Supersensory',
+'t2':'Fully Rested',
+'t3':'',
+'t4':'',
+'hp':'57',
+'speed':'37',
+'atk':'27',
+'def':'27',
+'spatk':'37',
+'spdef':'30',
+},
+{
+'image': '#8<img src= "ressources/sheartooth.webp" width="50" height="50">',
+'name':'Sheartooth',
+'type':'<a href="../types/water.html"><img src="ressources/Water.webp" width="50" height="50"></a>',
+'t1':'Supersensory',
+'t2':'Fully Rested',
+'t3':'',
+'t4':'',
+'hp':'64',
+'speed':'34',
+'atk':'36',
+'def':'45',
+'spatk':'37',
+'spdef':'45',
+},
+{
+'image': '#10<img src= "ressources/swurmy.webp" width="50" height="50">',
+'name':'Swurmy',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Strategist',
+'t2':'Slippery',
+'t3':'Inner Fire',
+'t4':'Antidote',
+'hp':'55',
+'speed':'30',
+'atk':'22',
+'def':'20',
+'spatk':'15',
+'spdef':'15',
+},
+{
+'image': '#11<img src= "ressources/beezel.webp" width="50" height="50">',
+'name':'Beezel',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Strategist',
+'t2':'Slippery',
+'t3':'Inner Fire',
+'t4':'Antidote',
+'hp':'60',
+'speed':'40',
+'atk':'43',
+'def':'22',
+'spatk':'20',
+'spdef':'30',
+},
+{
+'image': '#13<img src= "ressources/silquill.webp" width="50" height="50">',
+'name':'Silquill',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Robber',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'32',
+'atk':'27',
+'def':'25',
+'spatk':'22',
+'spdef':'22',
+},
+{
+'image': '#14<img src= "ressources/gildwing.webp" width="50" height="50">',
+'name':'Gildwing',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Robber',
+'t3':'',
+'t4':'',
+'hp':'64',
+'speed':'40',
+'atk':'36',
+'def':'31',
+'spatk':'28',
+'spdef':'28',
+},
+{
+'image': '#16<img src= "ressources/slitherpin.webp" width="50" height="50">',
+'name':'Slitherpin',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Good Aim',
+'t2':'Molter',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'35',
+'atk':'37',
+'def':'30',
+'spatk':'27',
+'spdef':'35',
+},
+{
+'image': '#18<img src= "ressources/houndos.webp" width="50" height="50">',
+'name':'Houndos',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Intimidating',
+'t2':'Coward',
+'t3':'Brave',
+'t4':'',
+'hp':'57',
+'speed':'37',
+'atk':'35',
+'def':'20',
+'spatk':'45',
+'spdef':'30',
+},
+{
+'image': '#20<img src= "ressources/armado.webp" width="50" height="50">',
+'name':'Armado',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Hoarder',
+'t2':'Thick Skin',
+'t3':'Vaccinated',
+'t4':'',
+'hp':'55',
+'speed':'20',
+'atk':'45',
+'def':'55',
+'spatk':'20',
+'spdef':'20',
+},
+{
+'image': '#21<img src= "ressources/armadil.webp" width="50" height="50">',
+'name':'Armadil',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Hoarder',
+'t2':'Thick Skin',
+'t3':'Vaccinated',
+'t4':'',
+'hp':'62',
+'speed':'25',
+'atk':'52',
+'def':'63',
+'spatk':'27',
+'spdef':'27',
+},
+{
+'image': '#33<img src= "ressources/moffel.webp" width="50" height="50">',
+'name':'Moffel',
+'type':'<a href="../types/sand.html"><img src="ressources/Sand.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Lucky',
+'t3':'',
+'t4':'',
+'hp':'60',
+'speed':'25',
+'atk':'42',
+'def':'22',
+'spatk':'40',
+'spdef':'20',
+},
+{
+'image': '#34<img src= "ressources/digmow.webp" width="50" height="50">',
+'name':'Digmow',
+'type':'<a href="../types/sand.html"><img src="ressources/Sand.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Lucky',
+'t3':'',
+'t4':'',
+'hp':'66',
+'speed':'31',
+'atk':'48',
+'def':'28',
+'spatk':'46',
+'spdef':'26',
+},
+{
+'image': '#36<img src= "ressources/buzzlet.webp" width="50" height="50">',
+'name':'Buzzlet',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Good Aim',
+'t2':'Static Body',
+'t3':'',
+'t4':'',
+'hp':'62',
+'speed':'22',
+'atk':'25',
+'def':'25',
+'spatk':'37',
+'spdef':'27',
+},
+{
+'image': '#37<img src= "ressources/bazzer.webp" width="50" height="50">',
+'name':'Bazzer',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Good Aim',
+'t2':'Static Body',
+'t3':'',
+'t4':'',
+'hp':'70',
+'speed':'27',
+'atk':'32',
+'def':'32',
+'spatk':'45',
+'spdef':'35',
+},
+{
+'image': '#39<img src= "ressources/lunarpup.webp" width="50" height="50">',
+'name':'Lunarpup',
+'type':'<a href="../types/ghost.html"><img src="ressources/Ghost.webp" width="50" height="50"></a>',
+'t1':'Gravity Pull',
+'t2':'Intimidating',
+'t3':'Dark Atmosphere',
+'t4':'',
+'hp':'50',
+'speed':'45',
+'atk':'22',
+'def':'20',
+'spatk':'55',
+'spdef':'22',
+},
+{
+'image': '#40<img src= "ressources/lunarwulf.webp" width="50" height="50">',
+'name':'Lunarwulf',
+'type':'<a href="../types/ghost.html"><img src="ressources/Ghost.webp" width="50" height="50"></a>',
+'t1':'Gravity Pull',
+'t2':'Intimidating',
+'t3':'Dark Atmosphere',
+'t4':'',
+'hp':'57',
+'speed':'52',
+'atk':'30',
+'def':'27',
+'spatk':'63',
+'spdef':'32',
+},
+{
+'image': '#70<img src= "ressources/lumon.webp" width="50" height="50">',
+'name':'Lumon',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Amplified',
+'t2':'Conductor',
+'t3':'Illuminate',
+'t4':'',
+'hp':'52',
+'speed':'30',
+'atk':'22',
+'def':'26',
+'spatk':'25',
+'spdef':'32',
+},
+{
+'image': '#71<img src= "ressources/lampyre.webp" width="50" height="50">',
+'name':'Lampyre',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Amplified',
+'t2':'Conductor',
+'t3':'Illuminate',
+'t4':'',
+'hp':'62',
+'speed':'45',
+'atk':'27',
+'def':'30',
+'spatk':'30',
+'spdef':'37',
+},
+{
+'image': '#73<img src= "ressources/patterbit.webp" width="50" height="50">',
+'name':'Patterbit',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Downloader',
+'t2':'Conductor',
+'t3':'Robber',
+'t4':'',
+'hp':'67',
+'speed':'25',
+'atk':'35',
+'def':'40',
+'spatk':'47',
+'spdef':'42',
+},
+{
+'image': '#74<img src= "ressources/patterbyte.webp" width="50" height="50">',
+'name':'Pitterbyte',
+'type':'<a href="../types/normal.html"><img src="ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Downloader',
+'t2':'Conductor',
+'t3':'Robber',
+'t4':'',
+'hp':'77',
+'speed':'35',
+'atk':'45',
+'def':'50',
+'spatk':'58',
+'spdef':'52',
+},
+{
+'image': '#91<img src= "ressources/gauslime.webp" width="50" height="50">',
+'name':'Gauslime',
+'type':'<a href="../types/electric.html"><img src="ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'Sticky Layer',
+'t2':'Stinky',
+'t3':'Gravity Pull',
+'t4':'Magnetic',
+'hp':'47',
+'speed':'27',
+'atk':'40',
+'def':'40',
+'spatk':'35',
+'spdef':'35',
+},
+{
+'image': '#106<img src= "ressources/mino.webp" width="50" height="50">',
+'name':'Mino',
+'type':'<a href="../types/fire.html"><img src="ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Comeback',
+'t2':'Motivated',
+'t3':'',
+'t4':'',
+'hp':'52',
+'speed':'40',
+'atk':'35',
+'def':'20',
+'spatk':'30',
+'spdef':'30',
+},
+{
+'image': '#109<img src= "ressources/frova.webp" width="50" height="50">',
+'name':'<a href="coromon/frova.html">Frova</a>',
+'type':'<a href="../types/ice.html"><img src="ressources/Ice.webp" width="50" height="50"></a>',
+'t1':'Caffeinated',
+'t2':'Clean Retreat',
+'t3':'',
+'t4':'',
+'hp':'50',
+'speed':'25',
+'atk':'17',
+'def':'17',
+'spatk':'27',
+'spdef':'22',
+},
+{
+'image': '#110<img src= "ressources/froshell.webp" width="50" height="50">',
+'name':'<a href="coromon/froshell.html">Froshell</a>',
+'type':'<a href="../types/ice.html"><img src="ressources/Ice.webp" width="50" height="50"></a>',
+'t1':'Caffeinated',
+'t2':'Clean Retreat',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'30',
+'atk':'22',
+'def':'27',
+'spatk':'37',
+'spdef':'35',
+}
+]
+
+buildTable(corodex)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('coroData')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].image}</td>
+							<td>${data[i].name}</td>
+              <td>${data[i].type}</td>
+              <td>${data[i].t1}</td>
+              <td>${data[i].t2}</td>
+              <td>${data[i].t3}</td>
+              <td>${data[i].t4}</td>
+              <td>${data[i].hp}</td>
+              <td>${data[i].speed}</td>
+              <td>${data[i].atk}</td>
+              <td>${data[i].def}</td>
+              <td>${data[i].spatk}</td>
+              <td>${data[i].spdef}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+</script>
+<footer>
+  <p>Author: Alexagide#5171<br>
+  I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+</footer>
+</html>

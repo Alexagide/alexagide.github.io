@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Swurmy Wiki - Traits</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="index.html" class="logo" title="Homepage">Swurmy Wiki <img src="ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="index.html">Homepage</a>
+    <a href="corodex.html">Corodex</a>
+    <a href="adventure.html">Adventure</a>
+    <a href="types.html">Types</a>
+    <a class="active" href="traits.html">Traits</a>
+    <a href="skills.html">Skills</a>
+    <a href="items.html">Items</a>
+  </div>
+</div>
+
+<div style="padding-left:300px;padding-top:100px">
+<h1>All traits are listed here:</h1>
+</div>
+<table>
+<colgroup>
+<col width="15%">
+<col width="10%">
+</colgroup>
+<thead>
+<tr style="height: 20px;">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="traitData">
+</tbody>
+</table>
+
+<p style="padding-left:200px;">i was here</p>
+</body>
+<script>
+  var traits = [
+  {
+'name':'Amplified',
+'type':"Passive",
+'description':"Super Effective attacks deals 25% extra damage."},
+{
+'name':'Antidote',
+'type':"Active",
+'description':"Can cure poison of any member of the team. 10 minutes cooldown to recharge."},
+{
+'name':'Brave',
+'type':"Passive",
+'description':"Coromon isn't affected by curse."},
+{
+'name':'Bright Light',
+'type':"Passive",
+'description':"Clears Twilight effect when entering the battle. Also lighting up caves."},
+{
+'name':'Caffeinated',
+'type':"Passive",
+'description':"Increase the growth of the SP stat."},
+{
+'name':'Clean Retreat',
+'type':"Passive",
+'description':"When switching out, cures from all status problems."},
+{
+'name':'Clumsy Power',
+'type':"Passive",
+'description':"Increase the Power of it's attack by 25% but reduce accuracy by 10%."},
+{
+'name':'Comeback',
+'type':"Passive",
+'description':"When HP is below 25%, raises the user's Attack and Special Attack by 1 stage."},
+{
+'name':'Conductor',
+'type':"Passive",
+'description':"When hit by a Electric Type Skill, raises the user's Speed by 1 stage."},
+{
+'name':'Coward',
+'type':"Passive",
+'description':"When hit by a critical hit, raisers the user's Defense by 1 stage."},
+{
+'name':'Dark Atmosphere',
+'type':"Passive",
+'description':"Summon Twilight climat."},
+{
+'name':'Escapist',
+'type':"Passive",
+'description':"Always escape from a wild battle. Can be canceled by Gravity Pull."},
+{
+'name':'Fully Rested',
+'type':"Passive",
+'description':"When Coromon is full HP, reduces any damage by 40%."},
+{
+'name':'Good Aim',
+'type':"Passive",
+'description':"Increases the critical hit damage by 50% when using physical skills."},
+{
+'name':'Gravity Pull',
+'type':"Passive",
+'description':"Has  a 25% chance to prevent opponents from switching out or fleeing."},
+{
+'name':'Hoarder',
+'type':"Passive",
+'description':"The Coromon can find items around the battlefield."},
+{
+'name':'Inner Fire',
+'type':"Passive",
+'description':"The user's cannot be frozen."},
+{
+'name':'Lucky',
+'type':"Passive",
+'description':"Increases critical hit ratio by 25%."},
+{
+'name':'Magnetic',
+'type':"Passive",
+'description':"Has a 50% chance of retrieving back a spinner when the wild Coromon broke free."},
+{
+'name':'Menacing',
+'type':"Passive",
+'description':"Lowers the opponent's attack by 1 stage when entering in battle. Outside battle reduces the encounter of lower leveled Coromon."},
+{
+'name':'Molter',
+'type':"Passive",
+'description':"Has a 30% to cure any status problems after the end of each round."},
+{
+'name':'Motivated',
+'type':"Passive",
+'description':"When knocking out a Coromon, increases the Attack and Special Attack by 1 stage."},
+{
+'name':'Overclocker',
+'type':"Passive",
+'description':"Copy the Attack stat of the opponent if its current Attack is higher."},
+{
+'name':'Robber',
+'type':"Passive",
+'description':"50% extra gold after defeating Trainers. Applied even if the Coromon does not participate to the battle."},
+{
+'name':'Sharp Claws',
+'type':"Passive",
+'description':"Cannot lowers the user's Attack."},
+{
+'name':'Slippery',
+'type':"Passive",
+'description':"Grants the user's a 25% chance to evade status skills (every status or Status like Burn by Ignite?)"},
+{
+'name':'Static Body',
+'type':"Passive",
+'description':"When the opponents makes contact has a 50% chance of being paralysed."},
+{
+'name':'Sticky Layer',
+'type':"Passive",
+'description':"When the opponents makes contact lower's the opponnent Speed by 1 stage."},
+{
+'name':'Stinky',
+'type':"Passive",
+'description':"has a 20% chance to make an opponent hazy. Outside of battle it has a chance to repel wild Coromon"},
+{
+'name':'Strategist',
+'type':"Passive",
+'description':"Doubles critical hit chance if attacking after the target."},
+{
+'name':'Supersensory',
+'type':"Passive",
+'description':"Raises its most stong stat when one of its stats are decreased."},
+{
+'name':'Thick Skin',
+'type':"Passive",
+'description':"Immunes to critical hit."},
+{
+'name':'Vaccinated',
+'type':"Passive",
+'description':"Immunes to poison."},
+{
+'name':'Vegetarian',
+'type':"Passive",
+'description':"Restores the user's HP by 20% when eating a Fruit."}
+  ]
+
+  buildTable(traits)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('traitData')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].name}</td>
+							<td>${data[i].type}</td>
+              <td class="a-left">${data[i].description}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+<footer>
+  <p>Author: Alexagide#5171<br>
+  I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+</footer>
+</html>

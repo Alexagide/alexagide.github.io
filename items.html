@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Swurmy Wiki - Items</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="index.html" class="logo" title="Homepage">Swurmy Wiki <img src="ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="index.html">Homepage</a>
+    <a href="corodex.html">Corodex</a>
+    <a href="adventure.html">Adventure</a>
+    <a href="types.html">Types</a>
+    <a href="traits.html">Traits</a>
+    <a href="skills.html">Skills</a>
+    <a class="active" href="items.html">Items</a>
+  </div>
+</div>
+<div style="padding-left:300px;padding-top:100px">
+    <h1 href=#ttt>All Items are listed here:</h1>
+    <p><a href="#ca">Cakes</a> - <a href="#sp">Spinner</a> - <a href="#hd">Held Items</a> - <a href="#cl">Cloting</a> - <a href="#ki">Key Item</a> - <a href="#oi">Other items</a></p>
+    <br>
+    <h2 id="ca">Cakes</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+<th>Buy Price</th>
+<th>Sell Price</th>
+</tr>
+<tbody id="cakeData">
+</tbody>
+</table>
+<br>
+<div style="padding-left:300px;">
+<h2 id="sp">Spinner</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+<th>Buy Price</th>
+<th>Sell Price</th>
+</tr>
+<tbody id="spinnerData">
+</tbody>
+</table>
+<br>
+<div style="padding-left:300px;">
+<h2 id="hd">Held Items</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+<th>Sell Price</th>
+</tr>
+<tbody id="heldData">
+</tbody>
+</table>
+<br>
+<div style="padding-left:300px;">
+<h2 id="cl">Clothing</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Method of obtention</th>
+</tr>
+<tbody id="clothingData">
+</tbody>
+</table>
+<br>
+<div style="padding-left:300px;">
+<h2 id="ki">Key Items</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tbody id="keyData">
+</tbody>
+</table>                                                       
+<br>
+<div style="padding-left:300px;">
+<h2 id="oi">Other Items</h2>
+</div>
+<table>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+<th>Buy Price</th>
+<th>Sell Price</th>
+</tr>
+<tbody id="otherData">
+</tbody>
+</table>
+<br><br><br>
+
+</body>
+<script>
+
+function buildTable(data){
+  if (data == cakes){
+    var table = document.getElementById("cakeData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+            <td>${data[i].buy}</td>
+            <td>${data[i].sell}</td>
+          </tr>`
+    table.innerHTML += row
+  }}
+  else if (data == spinner){
+    var table = document.getElementById("spinnerData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+            <td>${data[i].buy}</td>
+            <td>${data[i].sell}</td>
+          </tr>`
+    table.innerHTML += row
+  }} else if (data == held) {
+    var table = document.getElementById("heldData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+            <td>${data[i].sell}</td>
+          </tr>`
+    table.innerHTML += row
+  }} else if (data == clothes) {
+    var table = document.getElementById("clothingData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].method}</td>
+          </tr>`
+    table.innerHTML += row
+  }} else if (data == keyItems) {
+    var table = document.getElementById("keyData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+          </tr>`
+    table.innerHTML += row
+  }} else if (data == otherItems) {
+    var table = document.getElementById("otherData")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+      <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+            <td>${data[i].buy}</td>
+            <td>${data[i].sell}</td>
+          </tr>`
+    table.innerHTML += row
+  }}
+
+  
+
+  
+}
+
+
+var cakes = [
+{
+'image':'<img src="ressources/hp_1.png" width="40px" height="40px">',
+'name':'HP Cake (S)',
+'description':"Restores 20 HP.",
+'buy':'300',
+'sell':'150'},
+{
+'image':'<img src="ressources/hp_2.png" width="40px" height="40px">',
+'name':'HP Cake (M)',
+'description':"Restores 50 HP.",
+'buy':'700',
+'sell':'350'},
+{
+'image':'<img src="ressources/hp_3.png" width="40px" height="40px">',
+'name':'HP Cake (L)',
+'description':"Restores 200 HP.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/hp_4.png" width="40px" height="40px">',
+'name':'HP Cake (XL)',
+'description':"Restores all HP.",
+'buy':'2500',
+'sell':'1250'},
+{
+'image':'<img src="ressources/sp_1.png" width="40px" height="40px">',
+'name':'SP Cake (S)',
+'description':"Restores 20 SP.",
+'buy':'100',
+'sell':'50'},
+{
+'image':'<img src="ressources/sp_2.png" width="40px" height="40px">',
+'name':'SP Cake (M)',
+'description':"Restores 25 SP.",
+'buy':'250',
+'sell':'125'},
+{
+'image':'<img src="ressources/sp_3.png" width="40px" height="40px">',
+'name':'SP Cake (L)',
+'description':"Restores 35 SP.",
+'buy':'400',
+'sell':'200'},
+{
+'image':'<img src="ressources/sp_4.png" width="40px" height="40px">',
+'name':'SP Cake (XL)',
+'description':"Restores all SP.",
+'buy':'800',
+'sell':'400'},
+{
+'image':'<img src="ressources/cb_1.png" width="40px" height="40px">',
+'name':'Combi Cake (S)',
+'description':"Restores 15 HP and 15 SP.",
+'buy':'600',
+'sell':'300'},
+{
+'image':'<img src="ressources/cb_2.png" width="40px" height="40px">',
+'name':'Combi Cake (M)',
+'description':"Restores 40 HP and 20 SP.",
+'buy':'1200',
+'sell':'350'},
+{
+'image':'<img src="ressources/cb_3.png" width="40px" height="40px">',
+'name':'Combi Cake (L)',
+'description':"Restores 150 HP and 25 SP.",
+'buy':'2000',
+'sell':'1000'},
+{
+'image':'<img src="ressources/cb_4.png" width="40px" height="40px">',
+'name':'Combi Cake (XL)',
+'description':"Restores all HP and SP.",
+'buy':'4000',
+'sell':'2000'},
+{
+'image':'<img src="ressources/att_1.png" width="40px" height="40px">',
+'name':'Attack Cake (S)',
+'description':"Increases the user's Attack by 1 stage.",
+'buy':'500',
+'sell':'250'},
+{
+'image':'<img src="ressources/att_2.png" width="40px" height="40px">',
+'name':'Attack Cake (L)',
+'description':"Increases the user's Attack by 2 stage.",
+'buy':'???',
+'sell':'???'},
+{
+'image':'<img src="ressources/def_1.png" width="40px" height="40px">',
+'name':'Defense Cake (S)',
+'description':"Increases the user's Defense by 1 stage.",
+'buy':'450',
+'sell':'225'},
+{
+'image':'<img src="ressources/def_2.png" width="40px" height="40px">',
+'name':'Defense Cake (L)',
+'description':"Increases the user's Defense by 2 stage.",
+'buy':'1350',
+'sell':'675'},
+{
+'image':'<img src="ressources/satt_1.png" width="40px" height="40px">',
+'name':'Sp. Atk. Cake (S)',
+'description':"Increases the user's Special Attack by 1 stage.",
+'buy':'450',
+'sell':'225'},
+{
+'image':'<img src="ressources/satt_2.png" width="40px" height="40px">',
+'name':'Sp. Atk. Cake (L)',
+'description':"Increases the user's Special Attack by 2 stage.",
+'buy':'1350',
+'sell':'675'},
+{
+'image':'<img src="ressources/sdef_1.png" width="40px" height="40px">',
+'name':'Sp. Def. Cake (S)',
+'description':"Increases the user's Special Defense by 1 stage.",
+'buy':'400',
+'sell':'200'},
+{
+'image':'<img src="ressources/sdef_2.png" width="40px" height="40px">',
+'name':'Sp. Def. Cake (L)',
+'description':"Increases the user's Special Defense by 2 stage.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/spe_1.png" width="40px" height="40px">',
+'name':'Speed Cake (S)',
+'description':"Increases the user's Speed by 1 stage.",
+'buy':'250',
+'sell':'125'},
+{
+'image':'<img src="ressources/spe_2.png" width="40px" height="40px">',
+'name':'Speed Cake (L)',
+'description':"Increases the user's Speed by 2 stage.",
+'buy':'750',
+'sell':'375'},
+{
+'image':'<img src="ressources/burn.png" width="40px" height="40px">',
+'name':'Iced Cake',
+'description':"Cures a Coromon from burn.",
+'buy':'350',
+'sell':'175'},
+{
+'image':'<img src="ressources/curse.png" width="40px" height="40px">',
+'name':'Lifted Cake',
+'description':"Cures a Coromon from curse.",
+'buy':'300',
+'sell':'???'},
+{
+'image':'<img src="ressources/freeze.png" width="40px" height="40px">',
+'name':'Spicy Cake',
+'description':"Cures a Coromon from freeze.",
+'buy':'200',
+'sell':'100'},
+{
+'image':'<img src="ressources/poison.png" width="40px" height="40px">',
+'name':'Detox Cake',
+'description':"Cures a Coromon from Poison.",
+'buy':'300',
+'sell':'???'},
+{
+'image':'<img src="ressources/shock.png" width="40px" height="40px">',
+'name':'Ground Cake',
+'description':"Cures a Coromon from shock.",
+'buy':'350',
+'sell':'175'},
+{
+'image':'<img src="ressources/sleep.png" width="40px" height="40px">',
+'name':'Cafi Cake',
+'description':"Cures a Coromon from sleep.",
+'buy':'200',
+'sell':'100'},
+{
+'image':'<img src="ressources/haziness.png" width="40px" height="40px">',
+'name':'Clear Cake',
+'description':"Cures a Coromon from Haziness.",
+'buy':'200',
+'sell':'100'},
+{
+'image':'<img src="ressources/rev_1.png" width="40px" height="40px">',
+'name':'Phoenix Shard',
+'description':"Revive a Coromon and restore half of its HP.",
+'buy':'1500',
+'sell':'750'},
+{
+'image':'<img src="ressources/rev_2.png" width="40px" height="40px">',
+'name':'Phoenix Stone',
+'description':"Revive a Coromon and restore all of its HP.",
+'buy':'4000',
+'sell':'2000'}
+]
+
+
+buildTable(cakes)
+
+
+spinner = [
+{
+'image':'<img src="ressources/spinner.png" width="40px" height="40px">',
+'name':'Spinner',
+'description':"A device to catch Coromon.",
+'buy':'200',
+'sell':'100'},
+{
+'image':'<img src="ressources/s_spinner.png" width="40px" height="40px">',
+'name':'Silver Spinner',
+'description':"A device to catch Coromon. More effective than a Spinner.",
+'buy':'600',
+'sell':'300'},
+{
+'image':'<img src="ressources/g_spinner.png" width="40px" height="40px">',
+'name':'Golden Spinner',
+'description':"A device to catch Coromon. More effective than a Silver Spinner.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/n_spinner.png" width="40px" height="40px">',
+'name':'Plain Spinner',
+'description':"A Spinner designed to efficiently catch Normal type Coromon.",
+'buy':'500',
+'sell':'100'},
+{
+'image':'<img src="ressources/e_spinner.png" width="40px" height="40px">',
+'name':'Static Spinner',
+'description':"A Spinner designed to catch Electric type Coromon.",
+'buy':'500',
+'sell':'100'},
+{
+'image':'<img src="ressources/sand_spinner.png" width="40px" height="40px">',
+'name':'Ground Spinner',
+'description':"A spinner designed to catch Sand type Coromon.",
+'buy':'500',
+'sell':'100'},
+{
+'image':'<img src="ressources/heal_spinner.png" width="40px" height="40px">',
+'name':'Heal Spinner',
+'description':"A Spinner which fully restores HP, SP and status problems when catching a Coromon.",
+'buy':'',
+'sell':'150'},
+{
+'image':'<img src="ressources/start_spinner.png" width="40px" height="40px">',
+'name':'Trick Spinner',
+'description':"A Spinner that is most effective when used at the start of a battle.",
+'buy':'',
+'sell':'150'}
+]
+
+buildTable(spinner)
+
+
+var held = [
+  {
+    'image':'<img src="ressources/stinky_d.png" width="40px" height="40px">',
+    'name':'Stinky Disc',
+    'description':"Repels wild Coromon if held by the leading Squad member.",
+    'sell':'2000',
+  },
+  {
+    'image':'<img src="ressources/fear_d.png" width="40px" height="40px">',
+    'name':'Fear Disc',
+    'description':"Attracts hurt wild Coromon if held by the leading Squad member",
+    'sell':'2000',
+  },
+  {
+    'image':'<img src="ressources/lazy_gem.png" width="40px" height="40px">',
+    'name':'Lazy Gem',
+    'description':"Earn some XP when the holder did not participate in the battle.",
+    'sell':'10',
+  },
+  {
+    'image':'<img src="ressources/f_burn.png" width="40px" height="40px">',
+    'name':'Duria Fruit',
+    'description':"Cures a Coromon from burn.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_poison.png" width="40px" height="40px">',
+    'name':'Fik Fruit',
+    'description':"Cures a Coromon from poison.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_shock.png" width="40px" height="40px">',
+    'name':'Cuco Fruit',
+    'description':"Cures a Coromon from shock.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_sleep.png" width="40px" height="40px">',
+    'name':'Gao Fruit',
+    'description':"Cures a Coromon from sleep.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/elec_skill.png" width="40px" height="40px">',
+    'name':'Sur Fruit',
+    'description':"Doubles the power of the next Electric skill.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/normal_skill.png" width="40px" height="40px">',
+    'name':'Pomo Fruit',
+    'description':"Doubles the power of the next Normal skill.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_sp.png" width="40px" height="40px">',
+    'name':'Mull Fruit',
+    'description':"Restores 75% SP of a Coromon when it reaches 25% or below total SP.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_hp.png" width="40px" height="40px">',
+    'name':'Juba Fruit',
+    'description':"Restores 50% HP of a Coromon when it reaches 25% or below total HP.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_hp_risk.png" width="40px" height="40px">',
+    'name':'Cannul Fruit',
+    'description':"Restores 70% HP of a Coromon when it reaches 25% or below total HP.<br>Has a 30% chance to inflinct a Status (Burn, Shock, Curse, Poison, Sleep, Freeze, Haziness)",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_atk.png" width="40px" height="40px">',
+    'name':'Oki Fruit',
+    'description':"Raises the user's attack by 3 stages when it recahes 25% or below total HP.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_speatk.png" width="40px" height="40px">',
+    'name':'Dally Fruit',
+    'description':"Raises the user's special attack by 3 stages when it recahes 25% or below total HP.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_def.png" width="40px" height="40px">',
+    'name':'Dip Fruit',
+    'description':"Raises the user's defense by 3 stages when it recahes 25% or below total HP.",
+    'sell':'125',
+  },
+  {
+    'image':'<img src="ressources/f_xp.png" width="40px" height="40px">',
+    'name':'Ber Fruit',
+    'description':"Doubles the amount gained in the battle.",
+    'sell':'500',
+  }
+]
+
+buildTable(held)
+
+
+var clothes = [
+  {
+    'name':'Stealth Outfit',
+    'image':'<img src="ressources/waldo.png" width="40px" height="auto">',
+    'method':"Small chance of obtaining when randomizing the generation of your character at the start of the game.",
+  },
+  {
+    'name':'Santa Outfit',
+    'image':'<img src="ressources/santa.png" width="40px" height="auto">',
+    'method':"Interact with the Christmas tree in Lux Solis Campus during Christmas.",
+  },
+  {
+    'name':'Gauntlet',
+    'image':'<img src="ressources/normal_g.png" width="40px" height="auto">',
+    'method':"Talking to the receptionist when first arriving at the Lux Solis Campus.",
+  },
+  {
+    'name':'Gold Gauntlet',
+    'image':'<img src="ressources/gold_g.png" width="40px" height="auto">',
+    'method':"Pushing a button in the R&D Lab, getting 100 as response.",
+  },
+  {
+    'name':'Glasses',
+    'image':'<img src="ressources/glasses.png" width="40px" height="auto">',
+    'method':"Received during Prologue.",
+  },
+  {
+    'name':'Pumpkin Hat',
+    'image':'<img src="ressources/pumpkin.png" width="40px" height="auto">',
+    'method':"Interact with the pumpkin inside the eastern-most house in Hayville during Halloween.",
+  },
+  {
+    'name':'Bunny Ears',
+    'image':'<img src="ressources/bunny.png" width="40px" height="auto">',
+    'method':"Interact with a scarecrow in Hayville during Easter.",
+  },
+  {
+    'name':'Bookworm',
+    'image':'<img src="ressources/bookworm.png" width="40px" height="auto">',
+    'method':"After completing the Battle of Wits quest in the library in Hayville.",
+  },
+  {
+    'name':'Worker Helm',
+    'image':'<img src="ressources/w_helmet.png" width="40px" height="auto">',
+    'method':"Received in Buzzlet Lab during the story.",
+  },
+  {
+    'name':'Amish Hat',
+    'image':'<img src="ressources/amish.png" width="40px" height="auto">',
+    'method':"Found in a box in a secret passage to the right of the Hayville Entrance.",
+  },
+  {
+    'name':'Magnet Hat',
+    'image':'<img src="ressources/magnet.png" width="40px" height="auto">',
+    'method':"After completing the Buzzlet Delivery quest.",
+  },
+  {
+    'name':'Lab Coat',
+    'image':'<img src="ressources/labcoat.png" width="40px" height="auto">',
+    'method':"Received during Prologue.",
+  },
+]
+
+buildTable(clothes)
+
+var keyItems = [
+  {
+    'image':'<img src="ressources/phone.png" width="40px" height="auto">',
+    'name':'LuxPhone',
+    'description':'The latest Luxphone X.',
+  },
+  {
+    'image':'<img src="ressources/trainercard.png" width="40px" height="auto">',
+    'name':'LS Trainer Card',
+    'description':'Your Lux Solis trainer card!',
+  },
+  {
+    'image':'<img src="ressources/evo_block.png" width="40px" height="auto">',
+    'name':'Evo Block',
+    'description':'This device can attune its frequency to specific Coromon to prevent them from evolving.',
+  },
+  {
+    'image':'<img src="ressources/potent_reader.png" width="40px" height="auto">',
+    'name':'Potential Reader',
+    'description':'Read the Potential of any Coromon outside of battle.',
+  },
+  {
+    'image':'<img src="ressources/type_book.png" width="40px" height="auto">',
+    'name':'Type Manual',
+    'description':'Type effectiveness manual.',
+  },
+  {
+    'image':'<img src="ressources/difficulty_book.png" width="40px" height="auto">',
+    'name':'Difficulty handbook',
+    'description':'Manual explaning the different difficulty.',
+  },
+  {
+    'image':'<img src="ressources/condition_book.png" width="40px" height="auto">',
+    'name':'Condition handbook',
+    'description':'Manual explaning the different condition present in the game.',
+  },
+  {
+    'image':'<img src="ressources/condition_book.png" width="40px" height="auto">',
+    'name':'Coromon handbook',
+    'description':'Manual explaning some basic things about Coromon.',
+  },
+  {
+    'image':'<img src="ressources/trainer_book.png" width="40px" height="auto">',
+    'name':'Trainer handbook',
+    'description':'Manual explaning the behavior of trainer and rules of a battle.',
+  },
+  {
+    'image':'<img src="ressources/stat_book.png" width="40px" height="auto">',
+    'name':'Stats handbook',
+    'description':'Manual explaning how stats work in the game.',
+  },
+  {
+    'image':'<img src="ressources/weather_book.png" width="40px" height="auto">',
+    'name':'Weather handbook',
+    'description':'Manual explaning the different climat present in the game and their effect during battles.',
+  },
+  {
+    'image':'<img src="ressources/skill_book.png" width="40px" height="auto">',
+    'name':'Skills handbook',
+    'description':'Manual explaning few things about skills.',
+  },
+  {
+    'image':'<img src="ressources/traits_book.png" width="40px" height="auto">',
+    'name':'Traits handbook',
+    'description':'Manual explaning few things about traits.',
+  },
+  {
+    'image':'<img src="ressources/potent_book.png" width="40px" height="auto">',
+    'name':'Potential handbook',
+    'description':'Manual explaning few things on the potential value.',
+  },
+
+]
+
+buildTable(keyItems)
+
+var otherItems = [
+{
+'image':'<img src="ressources/s_scent.png" width="40px" height="auto">',
+'name':'Stinky Scent',
+'description':"Repels Coromon weaker than your leading Squad member for 3 minutes.",
+'buy':'600',
+'sell':'300'},
+{
+'image':'<img src="ressources/p_scent.png" width="40px" height="auto">',
+'name':'Protein Scent',
+'description':"Attracts Coromon with a higher level for 3 minutes.",
+'buy':'800',
+'sell':'400'},
+{
+'image':'<img src="ressources/f_scent.png" width="40px" height="auto">',
+'name':'Fear Scent',
+'description':"Attracts Coromon already hurt for 3 minutes.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/potent_scent.png" width="40px" height="auto">',
+'name':'Potent Scent',
+'description':"Attracts Coromon with higher Potential for 6 minutes.",
+'buy':'2000',
+'sell':'1000'},
+{
+'image':'<img src="ressources/poison_scent.png" width="40px" height="auto">',
+'name':'Toxic Scent',
+'description':"Attracts Coromon already poisoned for 3 minutes.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/shock_scent.png" width="40px" height="auto">',
+'name':'Charged Scent',
+'description':"Attracts Coromon already shocked for 3 minutes.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/shock_scent.png" width="40px" height="auto">',
+'name':'Foggy Scent',
+'description':"Attracts Coromon with haziness status for 3 minutes.",
+'buy':'1200',
+'sell':'600'},
+{
+'image':'<img src="ressources/recall.png" width="40px" height="auto">',
+'name':'Lux Recall',
+'description':"Recall to Lux Solis Campus.",
+'buy':'600',
+'sell':'300'},
+{
+'image':'<img src="ressources/recall_plus.png" width="40px" height="auto">',
+'name':'Lux Recall Plus',
+'description':"Recall to any teleporter.",
+'buy':'Nor for sale',
+'sell':''},
+{
+'image':'<img src="ressources/25_coupon.png" width="40px" height="auto">',
+'name':'Coupon 25%',
+'description':"	Get 25% of your total purchase back.",
+'buy':'Not for sale',
+'sell':''},
+{
+'image':'<img src="ressources/25_coupon.png" width="40px" height="auto">',
+'name':'Coupon 50%',
+'description':"	Get 50% of your total purchase back.",
+'buy':'Not for sale',
+'sell':''},
+{
+'image':'<img src="ressources/gauntlet_coupon.png" width="40px" height="auto">',
+'name':'Gauntlet Coupon',
+'description':"This coupon entitles you to receive one (1) other Gauntlet or the Gold Gauntlet.<br>Can be redeemed at the Lux Solis Campus reception.",
+'buy':'Not for Sale',
+'sell':''},
+{
+'image':'<img src="ressources/titan_electric.png" width="40px" height="auto">',
+'name':'Electric Essence',
+'description':"The Titan Essence of the Electric Titan Voltgar.",
+'buy':'Not for sale',
+'sell':''},
+]
+
+buildTable(otherItems)
+
+</script>
+<footer>
+  <p>Author: Alexagide#5171<br>
+  I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+</footer>
+</html>
