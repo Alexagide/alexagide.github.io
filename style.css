@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+  margin: 0;
+  font-family: 'corofont';
+  background-color:#202020;
+  min-height: 100vh; 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1{
+  font-size:xx-large;
+  color:white;
+}
+
+h2{
+  color:white;
+}
+
+p {
+  font-size:large;
+  word-wrap: break-word;
+  width: 90%;
+  margin-left: 0px;
+  margin-right: auto;
+  color:white;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #1648ff;
+  padding: 20px 10px;
+  min-height:50px;
+}
+
+.header a {
+  float: left;
+  color: #F9F9F9;
+  text-shadow: -2px 2px 1px #000,
+				2px 2px 1px #000,
+				2px -2px 1px #000,
+				-2px -2px 1px #000;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size:50px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #7CC5FF;
+  color: white;
+}
+
+.header a.active {
+  background-color: #32C4FF;
+  color: white;
+}
+
+.header-right {
+  float: right;
+  padding-right: 5%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: 1px solid black;
+  text-align:center;
+  vertical-align: center;
+  background-color:#32C4FF;
+  font-weight:normal;
+  font-size: large;
+  padding:5px;
+}
+
+td {
+  border: 1px solid black;
+  text-align:center;
+  padding:5px;
+  height:42px;
+}
+
+tr:nth-child(odd) {
+  background-color: #b1d8f8;
+}
+
+tr:nth-child(even) {
+  background-color: #6eb7f3;
+}
+
+img::selection {
+  background: transparent;
+}
+
+.a-left {
+  text-align:left; 
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+p a{
+  color:white;
+  background-color: transparent;
+  text-decoration: none;  
+}
+
+p a:link{
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+p a:active{
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+p a:hover{
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+p a:visited{
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+th a:link {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:visited {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:hover {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:active {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+td a:link {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+td a:visited {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+td a:hover {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+td a:active {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.button {
+  color:white;
+  border: none;
+  padding: 20px 30px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #008CBA;
+  border-radius: 12px;
+  font-family: 'corofont';
+  font-size:x-large;
+  text-shadow: -2px 2px 1px #000,
+				2px 2px 1px #000,
+				2px -2px 1px #000,
+				-2px -2px 1px #000;
+}
+
+button:hover{
+  background-color: #7CC5FF
+}
+
+.button1{
+  background-color: green;
+  width: 40%;
+}
+.button1:hover {
+  background-color: limegreen;
+  color: white;
+}
+
+.button2{
+  background-color: darkcyan;
+  width: 40%;
+}
+
+.button2:hover {
+  background-color: cyan;
+  color: white;
+}
+
+.button3{
+  background-color: goldenrod;
+  width: 40%;
+}
+
+.button3:hover {
+  background-color: yellow;
+  color: white;
+}
+
+.button4{
+  background-color: darkred;
+  width: 40%;
+}
+
+.button4:hover {
+  background-color: red;
+  color: white;
+}
+
+
+button a:link {
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+button a:visited {
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+button a:hover {
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+button a:active {
+  color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  background-color: #1648ff;
+  color: white;
+  min-height:50px; 
+}
+
+.centerbutton {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+@font-face {
+    font-family: 'Corofont';
+    src: url('ressources/corofont2.ttf');
+}
+
+.minitable{
+  float: left;
+  width: 10%;
+}
+
+.bigtable {
+  float: left;
+  width: 50%;
+  margin-right:3%;
+  margin-left:5%;
+}
+
+.normaltable {
+  float: left;
+  width: 20%;
+  margin-right:3%;
+  margin-left:3%;
+}
