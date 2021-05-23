@@ -79,7 +79,7 @@ table {
 }
 
 th {
-  border: 1px solid #f1f1f1;
+  border: 1px solid black;
   text-align:center;
   vertical-align: center;
   background-color:#32C4FF;
@@ -89,16 +89,10 @@ th {
 }
 
 td {
-  border: 1px solid #f1f1f1;
+  border: 1px solid black;
   text-align:center;
   padding:5px;
   height:42px;
-}
-
-.a-left {
-  text-align:left; 
-  padding-left: 2%;
-  padding-right: 2%;
 }
 
 tr:nth-child(odd) {
@@ -111,6 +105,12 @@ tr:nth-child(even) {
 
 img::selection {
   background: transparent;
+}
+
+.a-left {
+  text-align:left; 
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 p a{
@@ -139,6 +139,27 @@ p a:hover{
 
 p a:visited{
   color:white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+th a:link {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:visited {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:hover {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+}
+th a:active {
+  color:black;
   background-color: transparent;
   text-decoration: none;
 }
