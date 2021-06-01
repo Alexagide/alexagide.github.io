@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Fire</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<h1>Fire</h1>
+<div class="row">
+    <div class="column">
+      <h1>Offensive Effectiveness</h1>
+      <h2>Weak against :</h2>
+      <p><a href="../types/fire.html"><img src="../ressources/Fire.webp" width="50px" height="50px"></a>
+        <a href="../types/water.html"><img src="../ressources/Water.webp" width="50px" height="50px"></a></p>
+      <h2>Strong against :</h2>
+      <p><a href="../types/ice.html"><img src="../ressources/Ice.webp" width="50px" height="50px"></a></p>
+    </div>
+    <div class="column">
+      <h1>Defensive Effectiveness</h1>
+      <h2>Weak against :</h2>
+      <p><a href="../types/water.html"><img src="../ressources/Water.webp" width="50px" height="50px"></a>
+        <a href="../types/air.html"><img src="../ressources/Air.webp" width="50px" height="50px"></a></p>
+      <h2>Strong against :</h2>
+      <p><a href="../types/fire.html"><img src="../ressources/Fire.webp" width="50px" height="50px"></a>
+        <a href="../types/ice.html"><img src="../ressources/Ice.webp" width="50px" height="50px"></a>
+        <a href="../types/heavy.html"><img src="../ressources/Heavy.webp" width="50px" height="50px"></a></p>
+    </div>
+  </div>
+<br><br><br><br>
+<h1>List of Fire Coromon</h1>
+<table>
+    <tr>
+        <th style="width: 8%;"># in Corodex</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th style="width: 8%;">Traits</th>
+        <th style="width: 8%;"></th>
+        <th style="width: 8%;"></th>
+        <th style="width: 8%;"></th>
+        <th>HP</th>
+        <th>Speed</th>
+        <th>Attack</th>
+        <th>Defense</th>
+        <th>Sp. Att</th>
+        <th>Sp. Def</th>
+      </tr>
+    </thead>
+    <tbody id="coroData">
+    </tbody>
+</table>
+<br><br><br><br>
+<h1>List of Fire Skills</h1>
+<table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Power</th>
+    <th>Accuracy</th>
+    <th>SP</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody id="skillData">
+    </tbody>
+    </table>
+    <br><br>
+</article>
+</body>
+<script>
+    var skills = [
+    {
+'name':'Cinder',
+'type':'<a href="../types/fire.html"><img src="../ressources/Fire.webp" width="40" height="40"></a>',
+'category':'Special',
+'power':'40',
+'acc':'100',
+'sp':'3',
+'description':"Has a 10% chance to burn the target. "},
+{
+'name':'Ignite',
+'type':'<a href="../types/fire.html"><img src="../ressources/Fire.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'4',
+'description':"Causing a burn."},
+{
+'name':'Piercing Horns',
+'type':'<a href="../types/fire.html"><img src="../ressources/Fire.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'60',
+'acc':'100',
+'sp':'4',
+'description':"Has a 20% chance to burn the target."},
+{
+'name':'Smokescreen',
+'type':'<a href="../types/fire.html"><img src="../ressources/Fire.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'4',
+'description':"The user increases its Evasion by 1 stage."}
+]
+
+buildTable(skills)
+
+var corodex = [
+{
+'image': '#4<img src= "../ressources/toruga.webp" width="50" height="50">',
+'name':'<a href="../coromon/toruga.html">Toruga</a>',
+'type':'<a href="types/fire.html"><img src="../ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Vegetarian',
+'t2':'Thick Skin',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'37',
+'atk':'30',
+'def':'27',
+'spatk':'35',
+'spdef':'30',
+},
+{
+'image': '#5<img src= "../ressources/embaval.webp" width="50" height="50">',
+'name':'<a href="../coromon/embaval.html">Embaval</a>',
+'type':'<a href="types/fire.html"><img src="../ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Vegetarian',
+'t2':'Thick Skin',
+'t3':'',
+'t4':'',
+'hp':'65',
+'speed':'45',
+'atk':'35',
+'def':'35',
+'spatk':'45',
+'spdef':'37',
+},
+{
+'image': '#106<img src= "../ressources/mino.webp" width="50" height="50">',
+'name':'<a href="../coromon/mino.html">Mino</a>',
+'type':'<a href="types/fire.html"><img src="../ressources/Fire.webp" width="50" height="50"></a>',
+'t1':'Comeback',
+'t2':'Motivated',
+'t3':'',
+'t4':'',
+'hp':'52',
+'speed':'40',
+'atk':'35',
+'def':'20',
+'spatk':'30',
+'spdef':'30',
+}
+]
+
+buildTable(corodex)
+
+function buildTable(data){
+    if (data == skills){
+  var table = document.getElementById('skillData')
+
+  for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].name}</td>
+            <td>${data[i].type}</td>
+            <td>${data[i].category}</td>
+            <td>${data[i].power}</td>
+            <td>${data[i].acc}</td>
+            <td>${data[i].sp}</td>
+            <td class ="a-left">${data[i].description}</td>
+          </tr>`
+    table.innerHTML += row
+
+        };
+  } else if (data == corodex) {
+    var table = document.getElementById('coroData')
+
+for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+                    <td>${data[i].image}</td>
+                    <td>${data[i].name}</td>
+      <td>${data[i].type}</td>
+      <td>${data[i].t1}</td>
+      <td>${data[i].t2}</td>
+      <td>${data[i].t3}</td>
+      <td>${data[i].t4}</td>
+      <td>${data[i].hp}</td>
+      <td>${data[i].speed}</td>
+      <td>${data[i].atk}</td>
+      <td>${data[i].def}</td>
+      <td>${data[i].spatk}</td>
+      <td>${data[i].spdef}</td>
+              </tr>`
+    table.innerHTML += row
+  }}}
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>
