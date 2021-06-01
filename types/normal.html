@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Normal</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<h1>Normal</h1>
+<div class="row">
+    <div class="column">
+      <h1>Offensive Effectiveness</h1>
+      <h2>Weak against :</h2>
+      <p><a href="../types/ghost.html"><img src="../ressources/Ghost.webp" width="50px" height="50px"></a></p>
+      <h2>Strong against :</h2>
+      <p>-</p>
+    </div>
+    <div class="column">
+      <h1>Defensive Effectiveness</h1>
+      <h2>Weak against :</h2>
+      <p><a href="../types/poison.html"><img src="../ressources/Poison.webp" width="50px" height="50px"></a></p>
+      <h2>Strong against :</h2>
+      <p><a href="../types/ghost.html"><img src="../ressources/Ghost.webp" width="50px" height="50px"></a></p>
+    </div>
+  </div>
+<br><br><br><br>
+<h1>List of Normal Coromon</h1>
+<table>
+    <tr>
+        <th style="width: 8%;"># in Corodex</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th style="width: 8%;">Traits</th>
+        <th style="width: 8%;"></th>
+        <th style="width: 8%;"></th>
+        <th style="width: 8%;"></th>
+        <th>HP</th>
+        <th>Speed</th>
+        <th>Attack</th>
+        <th>Defense</th>
+        <th>Sp. Att</th>
+        <th>Sp. Def</th>
+      </tr>
+    </thead>
+    <tbody id="coroData">
+    </tbody>
+</table>
+<br><br><br><br>
+<h1>List of Normal Skills</h1>
+<table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Power</th>
+    <th>Accuracy</th>
+    <th>SP</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody id="skillData">
+    </tbody>
+    </table>
+    <br><br>
+</article>
+</body>
+<script>
+    var skills = [
+    {
+'name':'Agility Training',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's Speed by 2."},
+{
+'name':'Beat Up',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'20',
+'acc':'100',
+'sp':'4',
+'description':"Hitting once, plus one extra hit for each fainted Squad member."},
+{
+'name':'Coin Snatch',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'4',
+'description':"The attacker steals an increasing amount of gold from the opposing Trainer. "},
+{
+'name':'Concentrate',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's chance for a critical hit by 1 stage."},
+{
+'name':'Constrict',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Prevents the target from switching out for 5 turns. (Lower speed ?)"},
+{
+'name':'Cute Pose',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'2',
+'description':"Lowers the target's Defense by 1 stage."},
+{
+'name':'Distract',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's evasiveness by 1 stage."},
+{
+'name':'Double Sting',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'40',
+'acc':'95',
+'sp':'4',
+'description':"Hits twice. Always goes first."},
+{
+'name':'Epiphany',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's Attack and Defense by 1 stage."},
+{
+'name':'Face Slap',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'60',
+'acc':'100',
+'sp':'6',
+'description':"Has a 40% chance to confuse the target."},
+{
+'name':'Factory Reset',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'5',
+'description':"Reverts all stat changes. "},
+{
+'name':'Fast Strike',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'40',
+'acc':'100',
+'sp':'3',
+'description':"Always goes first."},
+{
+'name':'Feelers',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'4',
+'description':"The next attack on the target does 2.5 times damage."},
+{
+'name':'Last Stand',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'6',
+'description':"The user will survive attacks made by other Pokemon during this turn with at least 1 HP.<br>Note that a Coromon at 1 HP using the ability will still faint. "},
+{
+'name':'Mighty Roar',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'2',
+'description':"Lowers the target's Defense by 1 stage."},
+{
+'name':'Propellor Punch',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'40',
+'acc':'90',
+'sp':'4',
+'description':"Has a 25% chance to knock down the target."},
+{
+'name':'Rage',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's Attack by 1 stage."},
+{
+'name':'Slam',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'40',
+'acc':'100',
+'sp':'2',
+'description':"No secondary effect."},
+{
+'name':'Streamline',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'4',
+'description':"Raises the user's Speed by 1 stage."},
+{
+'name':'Tail Spin',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'25',
+'acc':'90',
+'sp':'3',
+'description':"Hits three times. The attack ends if the target avoids a hit."},
+{
+'name':'Toughen Up',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'-',
+'acc':'-',
+'sp':'3',
+'description':"Raises the user's Defense by 1 stage."}
+]
+
+buildTable(skills)
+
+var corodex = [
+{
+'image': '#10<img src= "../ressources/swurmy.webp" width="50" height="50">',
+'name':'<a href="../coromon/swurmy.html">Swurmy</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Strategist',
+'t2':'Slippery',
+'t3':'Inner Fire',
+'t4':'Antidote',
+'hp':'55',
+'speed':'30',
+'atk':'22',
+'def':'20',
+'spatk':'15',
+'spdef':'15',
+},
+{
+'image': '#11<img src= "../ressources/beezel.webp" width="50" height="50">',
+'name':'<a href="../coromon/beezel.html">Beezel</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Strategist',
+'t2':'Slippery',
+'t3':'Inner Fire',
+'t4':'Antidote',
+'hp':'60',
+'speed':'40',
+'atk':'45',
+'def':'22',
+'spatk':'20',
+'spdef':'30',
+},
+{
+'image': '#13<img src= "../ressources/silquill.webp" width="50" height="50">',
+'name':'<a href="../coromon/silquill.html">Silquill</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Robber',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'32',
+'atk':'27',
+'def':'25',
+'spatk':'22',
+'spdef':'22',
+},
+{
+'image': '#14<img src= "../ressources/gildwing.webp" width="50" height="50">',
+'name':'<a href="../coromon/gildwing.html">Gildwing</a>',
+'type':'<a href="normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Escapist',
+'t2':'Robber',
+'t3':'',
+'t4':'',
+'hp':'64',
+'speed':'40',
+'atk':'36',
+'def':'31',
+'spatk':'28',
+'spdef':'28',
+},
+{
+'image': '#16<img src= "../ressources/slitherpin.webp" width="50" height="50">',
+'name':'<a href="../coromon/slitherpin.html">Slitherpin</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Good Aim',
+'t2':'Molter',
+'t3':'',
+'t4':'',
+'hp':'55',
+'speed':'35',
+'atk':'37',
+'def':'30',
+'spatk':'27',
+'spdef':'35',
+},
+{
+'image': '#20<img src= "../ressources/armado.webp" width="50" height="50">',
+'name':'<a href="../coromon/armado.html">Armado</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Hoarder',
+'t2':'Thick Skin',
+'t3':'Vaccinated',
+'t4':'',
+'hp':'55',
+'speed':'20',
+'atk':'45',
+'def':'55',
+'spatk':'20',
+'spdef':'20',
+},
+{
+'image': '#21<img src= "../ressources/armadil.webp" width="50" height="50">',
+'name':'<a href="../coromon/armadil.html">Armadil</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Hoarder',
+'t2':'Thick Skin',
+'t3':'Vaccinated',
+'t4':'',
+'hp':'62',
+'speed':'25',
+'atk':'52',
+'def':'63',
+'spatk':'27',
+'spdef':'27',
+},
+{
+'image': '#73<img src= "../ressources/patterbit.webp" width="50" height="50">',
+'name':'<a href="../coromon/patterbit.html">Patterbit</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Downloader',
+'t2':'Conductor',
+'t3':'Robber',
+'t4':'',
+'hp':'67',
+'speed':'25',
+'atk':'35',
+'def':'40',
+'spatk':'47',
+'spdef':'42',
+},
+{
+'image': '#74<img src= "../ressources/pitterbyte.webp" width="50" height="50">',
+'name':'<a href="../coromon/pitterbyte.html">Pitterbyte</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'Downloader',
+'t2':'Conductor',
+'t3':'Robber',
+'t4':'',
+'hp':'77',
+'speed':'35',
+'atk':'45',
+'def':'50',
+'spatk':'58',
+'spdef':'52',
+}
+]
+
+buildTable(corodex)
+
+function buildTable(data){
+    if (data == skills){
+  var table = document.getElementById('skillData')
+
+  for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].name}</td>
+            <td>${data[i].type}</td>
+            <td>${data[i].category}</td>
+            <td>${data[i].power}</td>
+            <td>${data[i].acc}</td>
+            <td>${data[i].sp}</td>
+            <td class ="a-left">${data[i].description}</td>
+          </tr>`
+    table.innerHTML += row
+
+        };
+  } else if (data == corodex) {
+    var table = document.getElementById('coroData')
+
+for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+                    <td>${data[i].image}</td>
+                    <td>${data[i].name}</td>
+      <td>${data[i].type}</td>
+      <td>${data[i].t1}</td>
+      <td>${data[i].t2}</td>
+      <td>${data[i].t3}</td>
+      <td>${data[i].t4}</td>
+      <td>${data[i].hp}</td>
+      <td>${data[i].speed}</td>
+      <td>${data[i].atk}</td>
+      <td>${data[i].def}</td>
+      <td>${data[i].spatk}</td>
+      <td>${data[i].spdef}</td>
+              </tr>`
+    table.innerHTML += row
+  }}}
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>
