@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Poison</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<h1>Poison</h1>
+<div class="row">
+    <div class="column">
+      <h1>Offensive Effectiveness</h1>
+      <h2>Weak against :</h2>
+      <p><a href="../types/ice.html"><img src="../ressources/Ice.webp" width="50px" height="50px"></a></p>
+      <h2>Strong against :</h2>
+      <p><a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50px" height="50px"></a></p>
+    </div>
+  </div>
+<br><br><br><br>
+<h1>List of Poison Skills</h1>
+<table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Power</th>
+    <th>Accuracy</th>
+    <th>SP</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody id="skillData">
+    </tbody>
+    </table>
+    <br><br>
+</article>
+</body>
+<script>
+    var skills = [
+    {
+'name':'Poison Chomp',
+'type':'<a href="../types/poison.html"><img src="../ressources/Poison.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'80',
+'acc':'100',
+'sp':'4',
+'description':"Has 40% chance to poison the target."},
+{
+'name':'Poison Sting',
+'type':'<a href="../types/poison.html"><img src="../ressources/Poison.webp" width="40" height="40"></a>',
+'category':'Physical',
+'power':'20',
+'acc':'100',
+'sp':'1',
+'description':"Has 20% chance to poison the target. "},
+{
+'name':'Venomous Bees',
+'type':'<a href="../types/poison.html"><img src="../ressources/Poison.webp" width="40" height="40"></a>',
+'category':'Status',
+'power':'40',
+'acc':'100',
+'sp':'3',
+'description':"Poison the target the turn after it gets hit."},
+]
+
+buildTable(skills)
+
+function buildTable(data){
+  var table = document.getElementById('skillData')
+
+  for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].name}</td>
+            <td>${data[i].type}</td>
+            <td>${data[i].category}</td>
+            <td>${data[i].power}</td>
+            <td>${data[i].acc}</td>
+            <td>${data[i].sp}</td>
+            <td class ="a-left">${data[i].description}</td>
+          </tr>`
+    table.innerHTML += row
+
+        };
+  }
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>
