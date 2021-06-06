@@ -1,7 +1,7 @@
 # alexagide.github.io
 A Coromon Wiki to replace the old fandom one to avoid being restricted to the webpage structure.
 I also need some help, you can DM me through Discord (Alexagide#5171) to help me out!
-<p>06/06/21: I've created and updated link to traits pages, it's just for later to avoid not remembering!</p>
+<p>06/06/21: I've created and updated link to traits pages, it's just for later to avoid frorgeting!</p>
 <p>06/01/21: End of the break. I've done all coromon types pages (except the one's exclusive to skills, wip).<br>
   I didn't check if all links work properly.</p>
   <p>05/25/21: ALL COROMON ARE DONE! I will take a break...</p>
