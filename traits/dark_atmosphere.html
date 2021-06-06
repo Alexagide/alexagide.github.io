@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Dark Atmosphere</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<div class="row">
+  <div class="column">
+    <p><img src="ressources/dark_atmosphere.png" width="100%" height="auto"></p>
+    <i><p>Need Illustration!</p></i>
+  </div>
+  <div class="column">
+    <h1>Dark Atmosphere</h1>
+    <p>Dark Atmosphere is a Passive Trait that triggers a Twilight weather effect that lasts 5 rounds if its it not already twilight when the Coromon is sent out into battle.
+    </p>
+  </div>
+</div>
+</article>
+<br><br><br><br>
+<article style="padding-left:10%;padding-top:100px">
+<h2>Coromon with Dark Atmosphere:</h2>
+<table>
+  <tr>
+      <th style="width: 8%;"># in Corodex</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th style="width: 8%;">Traits</th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th>HP</th>
+      <th>Speed</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Att</th>
+      <th>Sp. Def</th>
+    </tr>
+  </thead>
+  <tbody id="coroData">
+  </tbody>
+</table>
+<br><br>
+</article>
+
+</body>
+<script>
+var corodex = [
+{
+'image': '#39<img src= "../ressources/lunarpup.webp" width="50" height="50">',
+'name':'<a href="../coromon/lunarpup.html">Lunarpup</a>',
+'type':'<a href="../types/ghost.html"><img src="../ressources/Ghost.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/gravity_pull.html">Gravity Pull</a>',
+'t2':'<a href="../traits/menacing.html">Menacing</a>',
+'t3':'<a href="../traits/dark_atmosphere.html">Dark Atmosphere</a>',
+'t4':'',
+'hp':'50',
+'speed':'45',
+'atk':'22',
+'def':'20',
+'spatk':'55',
+'spdef':'22',
+},
+{
+'image': '#40<img src= "../ressources/lunarwulf.webp" width="50" height="50">',
+'name':'<a href="../coromon/lunarwulf.html">Lunarwulf</a>',
+'type':'<a href="../types/ghost.html"><img src="../ressources/Ghost.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/gravity_pull.html">Gravity Pull</a>',
+'t2':'<a href="../traits/menacing.html">Menacing</a>',
+'t3':'<a href="../traits/dark_atmosphere.html">Dark Atmosphere</a>',
+'t4':'',
+'hp':'57',
+'speed':'52',
+'atk':'30',
+'def':'27',
+'spatk':'63',
+'spdef':'32',
+},
+]
+
+buildTable(corodex)
+
+function buildTable(data){
+		var table = document.getElementById('coroData')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].image}</td>
+							<td>${data[i].name}</td>
+              <td>${data[i].type}</td>
+              <td>${data[i].t1}</td>
+              <td>${data[i].t2}</td>
+              <td>${data[i].t3}</td>
+              <td>${data[i].t4}</td>
+              <td>${data[i].hp}</td>
+              <td>${data[i].speed}</td>
+              <td>${data[i].atk}</td>
+              <td>${data[i].def}</td>
+              <td>${data[i].spatk}</td>
+              <td>${data[i].spdef}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>

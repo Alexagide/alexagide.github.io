@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Bright Light</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<div class="row">
+  <div class="column">
+    <p><img src="ressources/bright_light.png" width="100%" height="auto"></p>
+    <i><p>A potent Lumon with Bright Light!</p></i>
+  </div>
+  <div class="column">
+    <h1>Bright Light</h1>
+    <p>Bright Light is a passive Trait that clears Twilight effect when the Coromon enters the battle. 
+      It can be binded and activated outside of battle to briefly light up the entire screen in dark areas such as Thunderous Cave.
+    </p>
+  </div>
+</div>
+</article>
+<br><br><br><br>
+<article style="padding-left:10%;padding-top:100px">
+<h2>Coromon with Bright Light:</h2>
+<table>
+  <tr>
+      <th style="width: 8%;"># in Corodex</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th style="width: 8%;">Traits</th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th>HP</th>
+      <th>Speed</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Att</th>
+      <th>Sp. Def</th>
+    </tr>
+  </thead>
+  <tbody id="coroData">
+  </tbody>
+</table>
+<br><br>
+</article>
+
+</body>
+<script>
+var corodex = [
+{
+'image': '#70<img src= "../ressources/lumon.webp" width="50" height="50">',
+'name':'<a href="../coromon/lumon.html">Lumon</a>',
+'type':'<a href="../types/electric.html"><img src="../ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/amplified.html">Amplified</a>',
+'t2':'<a href="../traits/conductor.html">Conductor</a>',
+'t3':'<a href="../traits/bright_light.html">Bright Light</a>',
+'t4':'',
+'hp':'52',
+'speed':'30',
+'atk':'22',
+'def':'25',
+'spatk':'25',
+'spdef':'32',
+},
+{
+'image': '#71<img src= "../ressources/lampyre.webp" width="50" height="50">',
+'name':'<a href="../coromon/lampyre.html">Lampyre</a>',
+'type':'<a href="../types/electric.html"><img src="../ressources/Electric.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/amplified.html">Amplified</a>',
+'t2':'<a href="../traits/conductor.html">Conductor</a>',
+'t3':'<a href="../traits/bright_light.html">Bright Light</a>',
+'t4':'',
+'hp':'62',
+'speed':'45',
+'atk':'27',
+'def':'30',
+'spatk':'30',
+'spdef':'37',
+},
+]
+
+buildTable(corodex)
+
+function buildTable(data){
+		var table = document.getElementById('coroData')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].image}</td>
+							<td>${data[i].name}</td>
+              <td>${data[i].type}</td>
+              <td>${data[i].t1}</td>
+              <td>${data[i].t2}</td>
+              <td>${data[i].t3}</td>
+              <td>${data[i].t4}</td>
+              <td>${data[i].hp}</td>
+              <td>${data[i].speed}</td>
+              <td>${data[i].atk}</td>
+              <td>${data[i].def}</td>
+              <td>${data[i].spatk}</td>
+              <td>${data[i].spdef}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>
