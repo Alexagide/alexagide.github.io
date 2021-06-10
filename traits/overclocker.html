@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Overclocker</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<div class="row">
+  <div class="column">
+    <p><img src="ressources/overclocker.png" width="100%" height="auto"></p>
+    <i><p>A pottent Patterbit with Overclocker!</p></i>
+  </div>
+  <div class="column">
+    <h1>Overclocker</h1>
+    <p>Overclocker is a passive trait that allows a Coromon to copy the Attack stat of the opponent Coromon to its own if it is higher than its current Attack stat.
+    </p>
+  </div>
+</div>
+</article>
+<br><br><br><br>
+<article style="padding-left:10%;padding-top:100px">
+<h2>Coromon with Overclocker:</h2>
+<table>
+  <tr>
+      <th style="width: 8%;"># in Corodex</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th style="width: 8%;">Traits</th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th>HP</th>
+      <th>Speed</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Att</th>
+      <th>Sp. Def</th>
+    </tr>
+  </thead>
+  <tbody id="coroData">
+  </tbody>
+</table>
+<br><br>
+</article>
+
+</body>
+<script>
+var corodex = [
+{
+'image': '#73<img src= "../ressources/patterbit.webp" width="50" height="50">',
+'name':'<a href="../coromon/patterbit.html">Patterbit</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/overclocker.html">Overclocker</a>',
+'t2':'<a href="../traits/conductor.html">Conductor</a>',
+'t3':'<a href="../traits/robber.html">Robber</a>',
+'t4':'',
+'hp':'67',
+'speed':'25',
+'atk':'35',
+'def':'40',
+'spatk':'47',
+'spdef':'42',
+},
+{
+'image': '#74<img src= "../ressources/pitterbyte.webp" width="50" height="50">',
+'name':'<a href="../coromon/pitterbyte.html">Pitterbyte</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/overclocker.html">Overclocker</a>',
+'t2':'<a href="../traits/conductor.html">Conductor</a>',
+'t3':'<a href="../traits/robber.html">Robber</a>',
+'t4':'',
+'hp':'77',
+'speed':'35',
+'atk':'45',
+'def':'50',
+'spatk':'58',
+'spdef':'52',
+},
+]
+
+buildTable(corodex)
+
+function buildTable(data){
+		var table = document.getElementById('coroData')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].image}</td>
+							<td>${data[i].name}</td>
+              <td>${data[i].type}</td>
+              <td>${data[i].t1}</td>
+              <td>${data[i].t2}</td>
+              <td>${data[i].t3}</td>
+              <td>${data[i].t4}</td>
+              <td>${data[i].hp}</td>
+              <td>${data[i].speed}</td>
+              <td>${data[i].atk}</td>
+              <td>${data[i].def}</td>
+              <td>${data[i].spatk}</td>
+              <td>${data[i].spdef}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>

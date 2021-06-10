@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<title>Swurmy Wiki - Hoarder</title>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="../index.html" class="logo" title="Homepage">Swurmy Wiki <img src="../ressources/Swurmy_front_A.webp" width="45"></a>
+  <div class="header-right">
+    <a href="../index.html">Homepage</a>
+    <a href="../corodex.html">Corodex</a>
+    <a href="../adventure.html">Adventure</a>
+    <a href="../types.html">Types</a>
+    <a href="../traits.html">Traits</a>
+    <a href="../skills.html">Skills</a>
+    <a href="../items.html">Items</a>
+  </div>
+</div>
+<article style="padding-left:10%;padding-top:100px">
+<div class="row">
+  <div class="column">
+    <p><img src="ressources/hoarder.png" width="100%" height="auto"></p>
+    <i><p>A perfect Armadil with Hoarder!</p></i>
+  </div>
+  <div class="column">
+    <h1>Hoarder</h1>
+    <p>Hoarder is a Passive trait that lets a Coromon collect items by chance in battles, even if the Coromon does not participate in the battle. Items are received at the end of battle with a message displaying what item which Coromon found.<br><br>
+      The chance that the Hoarder ability triggers at the end of a won battle is 10% per Coromon. Hoarder does not trigger if the player flees. Coromon do not have to participate in the battle for the skill to activate.<br><br>
+      The item obtained via Hoarder is random, but it is observed that higher quality items are obtained the higher the level of the Coromon with the trait.
+    </p>
+  </div>
+</div>
+</article>
+<br><br><br><br>
+<article style="padding-left:10%;padding-top:100px">
+<h2>Loot table:</h2>
+<table>
+  <tr>
+    <th style="width:8%">Level of rarity</th>
+    <th style="width:8%"></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th style="width:10%">Buy Price</th>
+    <th style="width:10%">Sell Price</th>
+    </tr>
+  </thead>
+  <tbody id="items">
+  </tbody>
+</table>
+<br> <br>
+<h2>Coromon with Hoarder:</h2>
+<table>
+  <tr>
+      <th style="width: 8%;"># in Corodex</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th style="width: 8%;">Traits</th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th style="width: 8%;"></th>
+      <th>HP</th>
+      <th>Speed</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Att</th>
+      <th>Sp. Def</th>
+    </tr>
+  </thead>
+  <tbody id="coroData">
+  </tbody>
+</table>
+<br><br>
+</article>
+
+</body>
+<script>
+var corodex = [
+{
+'image': '#20<img src= "../ressources/armado.webp" width="50" height="50">',
+'name':'<a href="../coromon/armado.html">Armado</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/hoarder.html">Hoarder</a>',
+'t2':'<a href="../traits/thick_skin.html">Thick Skin</a>',
+'t3':'<a href="../traits/vaccinated.html">Vaccinated</a>',
+'t4':'',
+'hp':'55',
+'speed':'20',
+'atk':'45',
+'def':'55',
+'spatk':'20',
+'spdef':'20',
+},
+{
+'image': '#21<img src= "../ressources/armadil.webp" width="50" height="50">',
+'name':'<a href="../coromon/armadil.html">Armadil</a>',
+'type':'<a href="../types/normal.html"><img src="../ressources/Normal.webp" width="50" height="50"></a>',
+'t1':'<a href="../traits/hoarder.html">Hoarder</a>',
+'t2':'<a href="../traits/thick_skin.html">Thick Skin</a>',
+'t3':'<a href="../traits/vaccinated.html">Vaccinated</a>',
+'t4':'',
+'hp':'62',
+'speed':'25',
+'atk':'52',
+'def':'63',
+'spatk':'27',
+'spdef':'27',
+},
+]
+
+var items = [
+{
+'image':'<img src="../ressources/hp_1.png" width="40px" height="40px">',
+'name':'HP Cake (S)',
+'description':"Restores 20 HP.",
+'buy':'300',
+'sell':'150',
+'number':'1',},
+{
+'image':'<img src="../ressources/sp_1.png" width="40px" height="40px">',
+'name':'SP Cake (S)',
+'description':"Restores 20 SP.",
+'buy':'100',
+'sell':'50',
+'number':'2'},
+{
+'image':'<img src="../ressources/spinner.png" width="40px" height="40px">',
+'name':'Spinner',
+'description':"A device to catch Coromon.",
+'buy':'200',
+'sell':'100',
+'number':'3'},
+{
+'image':'<img src="../ressources/hp_2.png" width="40px" height="40px">',
+'name':'HP Cake (M)',
+'description':"Restores 50 HP.",
+'buy':'700',
+'sell':'350',
+'number':'4',},
+{
+'image':'<img src="../ressources/sp_2.png" width="40px" height="40px">',
+'name':'SP Cake (M)',
+'description':"Restores 25 SP.",
+'buy':'250',
+'number':'5',
+'sell':'125'},
+{
+'image':'<img src="../ressources/s_spinner.png" width="40px" height="40px">',
+'name':'Silver Spinner',
+'description':"A device to catch Coromon. More effective than a Spinner.",
+'buy':'600',
+'number':'6',
+'sell':'300'},
+{
+'image':'<img src="../ressources/s_scent.png" width="40px" height="auto">',
+'name':'Stinky Scent',
+'description':"Repels Coromon weaker than your leading Squad member for 3 minutes.",
+'buy':'600',
+'number':'7',
+'sell':'300'},
+{
+'image':'<img src="../ressources/recall.png" width="40px" height="auto">',
+'name':'Lux Recall',
+'description':"Recall to Lux Solis Campus.",
+'buy':'600',
+'number':'8',
+'sell':'300'},
+{
+'image':'<img src="../ressources/f_atk.png" width="40px" height="40px">',
+'name':'Oki Fruit',
+'description':"Raises the user's attack by 3 stages when it recahes 25% or below total HP.",
+'buy':'Not for sale.',
+'number':'9',
+'sell':'125',
+},
+{
+'image':'<img src="../ressources/f_speatk.png" width="40px" height="40px">',
+'name':'Dally Fruit',
+'description':"Raises the user's special attack by 3 stages when it recahes 25% or below total HP.",
+'buy':'Not for sale.',
+'number':'10',
+'sell':'125',
+},
+{
+'image':'<img src="../ressources/cb_2.png" width="40px" height="40px">',
+'name':'Combi Cake (M)',
+'description':"Restores 40 HP and 20 SP.",
+'buy':'1200',
+'number':'11',
+'sell':'350'},
+{
+'image':'<img src="../ressources/f_hp.png" width="40px" height="40px">',
+'name':'Juba Fruit',
+'description':"Restores 50% HP of a Coromon when it reaches 25% or below total HP.",
+'sell':'125',
+'number':'12',
+'buy':'Not for sale.',
+},
+{
+'image':'<img src="../ressources/g_spinner.png" width="40px" height="40px">',
+'name':'Golden Spinner',
+'description':"A device to catch Coromon. More effective than a Silver Spinner.",
+'buy':'1200',
+'number':'13',
+'sell':'600'},
+]
+
+buildTable(corodex)
+buildTable(items)
+
+function buildTable(data){
+    if (data == corodex) {
+		var table = document.getElementById('coroData')
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].image}</td>
+							<td>${data[i].name}</td>
+              <td>${data[i].type}</td>
+              <td>${data[i].t1}</td>
+              <td>${data[i].t2}</td>
+              <td>${data[i].t3}</td>
+              <td>${data[i].t4}</td>
+              <td>${data[i].hp}</td>
+              <td>${data[i].speed}</td>
+              <td>${data[i].atk}</td>
+              <td>${data[i].def}</td>
+              <td>${data[i].spatk}</td>
+              <td>${data[i].spdef}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}} else if (data == items) {
+      var table = document.getElementById("items")
+    for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].number}</td>
+            <td>${data[i].image}</td>
+            <td>${data[i].name}</td>
+            <td class="a-left">${data[i].description}</td>
+            <td>${data[i].buy}</td>
+            <td>${data[i].sell}</td>
+          </tr>`
+    table.innerHTML += row
+    }}
+	}
+
+</script>
+<footer>
+    <p>Author: Alexagide#5171<br>
+    I'm not a dev of Coromon, it's just a fan-made wiki.</p>
+  </footer>
+</html>
